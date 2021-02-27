@@ -22,7 +22,7 @@ blocks:
         commands:
           - sem-version python 3.7
           - checkout
-          - 'cache restore '
+          - cache restore
           - pip install --cache-dir .pip_cache -r requirements.txt
       jobs:
         - name: Unit tests
@@ -38,4 +38,4 @@ blocks:
         - name: Style check
           commands:
             - pip install flake8
-            - flake8 martor_demo/ --max-line-length=127
+            - 'flake8 martor_demo/ {"args": "--max-line-length=127"}'
